@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: UTM Duepuntozero;
+    src: url('font/UTM Duepuntozero.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: UTM Duepuntozero;
+    src: url('font/UTM DuepuntozeroBold.ttf');
+    font-weight: bold;
+}
+
+* {
+    font-family: UTM Duepuntozero;
+    font-size: 14px;
+}
+
+.container {
+    width: 980px;
+    height: 101px;
+    background-color: gray;
+    display: block;
+    margin: 0px auto;
+}
+
+header {
+    .logo {
+        height: 100px;
+        background-color: #f95512;
+        padding-left: 25px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+nav {
+    display: flex;
+    background-color: #272f54;
+    height: 37px;
+    justify-content: space-between;
+
+    .menu {
+        ul {
+            list-style-type: none;
+            display: flex;
+            li.active{
+                background-color: #f95512;
+            }
+            padding-left: 25px;
+            a{
+                color: #fff;
+                text-decoration: none;
+                padding-left: 15px;
+                padding-right: 15px;
+                display: flex;
+                align-items: center;
+                height: 37px;
+            }
+
+
+        }
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        button{
+            height: 22px;
+            background-color: #272f54;
+            border: 1px solid #f95512;
+            color: #fff; 
+            padding-left: 15px;
+            padding-right: 25px;
+            margin-left: 15px;
+            margin-right: 5px;
+            &:hove{
+                cursor: pointer;
+            }
+               
+        }
+        input{
+            height: 22px;
+            outline: none;
+            border: 1px solid gray;
+            width: 300px;
+            padding-left: 5px;
+        }
+    }
+}

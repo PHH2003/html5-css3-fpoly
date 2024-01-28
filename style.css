@@ -1,95 +1,236 @@
+/* 1. Reset CSS */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* 2. Cấu hình font mặc định */
 @font-face {
-    font-family: UTM Duepuntozero;
+    font-family: 'UTM Duepuntozero';
     src: url('font/UTM Duepuntozero.ttf');
     font-weight: normal;
 }
 
 @font-face {
-    font-family: UTM Duepuntozero;
+    font-family: 'UTM Duepuntozero';
     src: url('font/UTM DuepuntozeroBold.ttf');
     font-weight: bold;
 }
 
 * {
-    font-family: UTM Duepuntozero;
+    font-family: 'UTM Duepuntozero';
     font-size: 14px;
 }
 
+
+/* 3. Cấu hình chiều rộng của trang web */
 .container {
     width: 980px;
-    height: 101px;
-    background-color: gray;
-    display: block;
-    margin: 0px auto;
+    /* background-color: gainsboro; */
+    margin: 0 auto;
 }
 
+/* 4. Cấu hình các thành phần nội dung của website */
+/* 4.1. Cấu hình header */
 header {
-    .logo {
+
+    /* Cấu hình logo */
+    .logo-box {
         height: 100px;
-        background-color: #f95512;
-        padding-left: 25px;
+        background: #f95512;
         display: flex;
         align-items: center;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+
+    /* Cấu hình nav */
+    .menu-box {
+        height: 37px;
+        background-color: #272f54;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .menu-left {
+            ul {
+                list-style-type: none;
+                display: flex;
+                padding-left: 20px;
+
+                li.active {
+                    background-color: #f95512;
+                }
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 0 20px;
+                    height: 37px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .menu-right {
+            button {
+                color: #fff;
+                background: #272f54;
+                border: 1px solid #f95512;
+                padding: 0 20px;
+                height: 21px;
+                margin-right: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            input {
+                padding: 0px 5px;
+                height: 21px;
+                border: 1px solid gray;
+                width: 200px;
+                margin-right: 10px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+
     }
 }
 
-nav {
-    display: flex;
-    background-color: #272f54;
-    height: 37px;
-    justify-content: space-between;
-
-    .menu {
-        ul {
-            list-style-type: none;
-            display: flex;
-            li.active{
-                background-color: #f95512;
-            }
-            padding-left: 25px;
-            a{
-                color: #fff;
-                text-decoration: none;
-                padding-left: 15px;
-                padding-right: 15px;
-                display: flex;
-                align-items: center;
-                height: 37px;
-            }
+/* 4.2. Cấu hình nội dung chính */
+.khu-vuc-banner {
+    margin-top: 8px;
+}
 
 
-        }
+.khu-vuc-tin-tuc {
+
+    .tieu-de {
+        color: #f95512;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 32px;
+        margin-top: 16px;
+        margin-bottom: 8px;
+        /* font-size: xx-large; */
     }
 
-    .button {
+    .danh-sach-tin-tuc {
+        /* 1. Dồn dữ liệu lên 1 hàng */
         display: flex;
-        align-items: center;
-        button{
-            height: 22px;
-            background-color: #272f54;
+
+
+        .tin-tuc {
+            /* 2. Set chiều rộng hợp lý cho từng box tin-tuc */
+            width: calc((100% - 32px - 32px) / 3);
             border: 1px solid #f95512;
-            color: #fff; 
-            padding-left: 15px;
-            padding-right: 25px;
-            margin-left: 15px;
-            margin-right: 5px;
-            &:hove{
-                cursor: pointer;
+
+            /* 3. Set khoảng các giữa các bõ tin-tuc */
+            margin-left: 32px;
+
+            &:first-child {
+                margin-left: 0;
             }
-               
+
+            /* 4. Set padding xung quanh */
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 24px;
+            padding-right: 24px;
+            /* padding: 8px 24px; */
+            /* padding: 8px 24px 8px 24px; */
+
+
+            /* Style cho tiêu đề tin tức */
+            a {
+                color: #f95512;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                h1 {
+                    font-size: 18px;
+                }
+            }
+
+            /* Tạo hiệu ứng hover vào ảnh */
+            .khu-vuc-img {
+                overflow: hidden;
+                /*                 
+                img {
+                    transition-duration: 2s;
+
+                    &:hover {
+                        transform: scale(1.5);
+                    }
+                } */
+            }
+
+            /* Zoom ảnh khi hover */
+            .hieu-ung-hover-01 {
+                img {
+                    transition-duration: 2s;
+
+                    &:hover {
+                        transform: scale(1.5);
+                    }
+                }
+            }
+
+            /* Xoay ảnh khi hover */
+            .hieu-ung-hover-02 {
+
+                img {
+                    transition-duration: 2s;
+
+                    &:hover {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+
+            /* Di chuyển ảnh từ dưới lên khi hover */
+            .hieu-ung-hover-03 {
+                img {
+                    position: relative;
+                    &:hover{
+                        animation-name: Chuyendongkieu3;
+                        animation-duration: 2s;
+                    }
+                }
+            }
         }
-        input{
-            height: 22px;
-            outline: none;
-            border: 1px solid gray;
-            width: 300px;
-            padding-left: 5px;
-        }
+
     }
+
+}
+/* Khai báo keyframes */
+@keyframes Chuyendongkieu3 {
+    from{
+        top:20px;
+    }
+    to {
+        top:0px;
+    }
+}
+/* 4.3. Cấu hình footer */
+footer {
+    background-color: #f95512;
+    color: #fff;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: 8px;
+
 }

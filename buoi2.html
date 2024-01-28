@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .vidu1{
+            transition-duration: 2s;
+            &:hover{
+                transform:scale(1.5);
+            }
+        }
+
+
+        .vidu2{
+            overflow: hidden;
+            img{
+                transition-duration: 2s;
+            &:hover{
+                transform: scale(1.5);
+            }   
+            }
+        }
+
+
+        .vidu3{
+            overflow: hidden;
+            img{
+                transition-duration: 2s;
+            &:hover{
+                transform: rotate(360deg);
+            }   
+            }
+        }
+    </style>
+</head>
+<body>
+    <h3>#Giới thiệu css transition và transform: scale()</h3>
+    <p>Dùng để phóng to đối tượng khi hover</p>
+    <hr>
+    <div style="height: 100px; width: 100px; background-color: red;">
+        Demo hiệu ứng phóng to đối tượng khi hover
+    </div>
+
+    <hr>
+    <h4>Ví dụ 1: Hover thay đổi kích thước đối tượng</h4>
+    <div class="vidu1" style="height: 100px; width: 100px; background-color: red;">
+        Demo hiệu ứng phóng to đối tượng khi hover
+    </div>
+
+    <hr>
+    <h4>Ví dụ 2: Hover thay đổi kích thước ảnh</h4>
+    <div class="vidu2">
+        <img src="./image/img1.jpg" alt="">
+    </div>
+
+    <hr>
+    <h4>Ví dụ 3: Hover xoay ảnh</h4>
+    <div class="vidu3">
+        <img src="./image/img1.jpg" alt="">
+    </div>
+</body>
+</html>

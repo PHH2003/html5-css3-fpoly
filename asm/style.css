@@ -1,0 +1,206 @@
+/* Mở pts và lấy các mã màu cần thiết */
+/* Màu nền website: #faf4fa */
+/* màu nền header: #111111 */
+/* Màu nền sản phẩm: #ffffff */
+/* Màu nền footer: #10100b */
+/* Màu nền button, active menu: #0269ce */
+/* Màu tiêu đề trang: #00265d */
+/* Màu giá tiền: #970505 */
+
+/* Mở pts và đo chiều cao, chiều rộng các đối tượng cần thiết */
+/* Chiều rộng container (Chiều rộng nội dung của website): 983px */
+/* Chiều cao header: 55px */
+/* Chiều cao footer: 50px */
+/* Chiều cao input, button ở footer: 30px */
+/* Các padding, marrgin khác có thể chủ động sử dụng tương đối */
+
+
+/* 1. Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* 2. Cấu hình font chữ | 2 điểm liền đó */
+@font-face {
+    font-family: 'UTM Duepuntozero';
+    src: url('font/UTM Duepuntozero.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'UTM Duepuntozero';
+    src: url('font/UTM DuepuntozeroBold.ttf');
+    font-weight: bold;
+}
+
+* {
+    font-family: 'UTM Duepuntozero';
+    font-size: 16px;
+    font-weight: normal;
+}
+
+
+/* Cấu hình màu nền của website */
+body {
+    background-color: #faf4fa;
+}
+
+
+/* Cấu hình chiều rộng của container */
+.container {
+    width: 983px;
+    margin: 0 auto;
+}
+
+
+/* Cấu hình header */
+header {
+    height: 55px;
+    background-color: #111111;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    /* Căn logo sang trái, menu sang phải, và giữa trên dưới */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .kv-logo {
+        /* Các bạn chủ động xử lý */
+    }
+
+    .kv-menu {
+        ul {
+            display: flex;
+
+            li {
+                padding-left: 10px;
+                padding-right: 10px;
+                border-right: 1px solid #ffffff;
+
+                a {
+                    color: #ffffff;
+                }
+
+                &:last-child {
+                    border-right: 0;
+                    padding-right: 0;
+                }
+
+                &.active {
+                    a {
+                        color: #0269ce;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.kv-san-pham {
+    .tieu-de {
+        color: #00265d;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .ds-san-pham {
+        /* Fix lỗi đẩy nội dung lên trên khi dùng float */
+        overflow: hidden;
+
+        .san-pham {
+            width: calc((100% - 60px) / 4);
+            float: left;
+
+            border: 1px solid lightgray;
+            padding: 10px;
+            margin: 10px;
+            background-color: #ffffff;
+
+            &:nth-child(4n) {
+                margin-right: 0;
+            }
+
+            &:nth-child(4n + 1) {
+                margin-left: 0;
+            }
+
+            .kv-anh {
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: auto;
+
+                    transition-duration: 3s;
+
+                    &:hover {
+                        transform: scale(2);
+                    }
+                }
+            }
+
+            .kv-ten {
+                text-align: center;
+            }
+
+            .kv-gia {
+                text-align: center;
+
+                .gia-ban {
+                    color: #970505;
+                }
+
+                .gia-niem-yet {
+                    text-decoration: line-through;
+                }
+            }
+
+        }
+    }
+}
+
+
+footer {
+    height: 50px;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .kv-dang-ky {
+        input {
+            height: 30px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        button {
+            height: 30px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #0269ce;
+            color: #ffffff;
+        }
+    }
+}

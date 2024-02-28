@@ -148,8 +148,31 @@ header {
                     transition-duration: 3s;
 
                     &:hover {
+                        /* zoom */
                         transform: scale(2);
+
+                        /* Xoay
+                        transform: rotate(360deg); */
                     }
+
+                    /* chuyển động từ dưới lên */
+                    /* 
+                        img {
+                            position: relative;
+                            &:hover{
+                                animation-name: Chuyendongkieu3;
+                                animation-duration: 2s;
+                            }
+                        } 
+                            @keyframes Chuyendongkieu3 {
+                                from{
+                                    top:20px;
+                                }
+                                to {
+                                    top:0px;
+                                }
+                            }
+                    */
                 }
             }
 
